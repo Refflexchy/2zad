@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Концерт - Музикална Вечер</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Playfair+Display&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        section {
+            background-color: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h2 {
+            color: #333;
+            font-family: 'Playfair Display', serif;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.5s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .animated-button {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .slideshow {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+        }
+        .slides {
+            display: none;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Музикална Вечер - Live Концерт</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Начало</a>
+        <a href="program.html">Програма</a>
+        <a href="venue.html">Място</a>
+        <a href="gallery.html">Галерия</a>
+        <a href="contact.html">Контакти</a>
+    </nav>
+
+    <section>
+        <h2>📅 Програма</h2>
+        <p>19:00 - Отваряне на вратите</p>
+        <p>20:00 - Група A на сцената</p>
+        <p>21:30 - Група B на сцената</p>
+        <p>23:00 - DJ сет и закриване</p>
+    </section>
+
+    <section>
+        <h2>📍 Място на провеждане</h2>
+        <p>Зала "Арена Музика"</p>
+        <p>ул. "Музикална" №15, София</p>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <section class="gallery">
+        <img src="image1.jpg" alt="Сцена">
+        <img src="image2.jpg" alt="Публика">
+        <img src="image3.jpg" alt="Група">
+    </section>
+
+    <section class="slideshow">
+        <img class="slides" src="slide1.jpg" alt="Слайд 1">
+        <img class="slides" src="slide2.jpg" alt="Слайд 2">
+        <img class="slides" src="slide3.jpg" alt="Слайд 3">
+    </section>
+
+    <section>
+        <h2>📝 Регистрация</h2>
+        <form>
+            <label>Име:</label>
+            <input type="text" placeholder="Въведете вашето име" required>
+            <label>Имейл:</label>
+            <input type="email" placeholder="Въведете вашия имейл" required>
+            <label>Телефон:</label>
+            <input type="tel" placeholder="Въведете телефонен номер">
+            <button class="animated-button" type="submit">Регистрирай се</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Музикална Вечер - Всички права запазени.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        function showSlides() {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1; }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+        showSlides();
+    </script>
+</body>
+</html>
